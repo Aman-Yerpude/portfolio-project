@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <style>@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);</style>
+    <!-- Bootstrap core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Material Design Bootstrap -->
+    <style>@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);</style>
+    <!-- Your custom styles (optional) -->
+  
+</head>
+
+
+
+
+<body>
+
+    <!--Main Navigation-->
+    <header>
+
+       
+       <!--Navbar -->
+            <nav class="mb-4 navbar navbar-expand-lg navbar-dark unique-color-dark">
+                <a class="navbar-brand font-bold" href="#">Aman Yerpude</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#"><i class="fa fa-github"></i> Github <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-gear"></i> Resume</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i class="fa fa-gear"></i> Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+       <!--/.Navbar -->
+        
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+        <div class="container">
+
+            <!--Section: Jumbotron-->
+            <section class="card wow fadeIn" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+
+                <!-- Content -->
+                <div class="card-body text-white text-center py-5 px-5 my-5">
+
+                    <h1 class="mb-4">
+                        <strong>Hi,I'am Aman.</strong>
+                    </h1>
+                   
+                    <p class="mb-4">
+                        <strong>Hey, my name is Aman Yerpude and I love to make Django websites.It's the thrill of handling the requests that the people want!</strong>
+                    </p>
+                    <a target="_blank" href="mailto:amanyerpude@outlook.com" class="btn btn-outline-white btn-lg">Email Me
+                        <i class="fas fa-graduation-cap ml-2"></i>
+                    </a>
+
+                </div>
+                <!-- Content -->
+            </section>
+            <!--Section: Jumbotron-->
+
+            <hr class="my-5">
+
+            <!--Section: Cards-->
+            <section class="text-center">
+
+                <!--Grid row-->
+                <div class="row mb-4 wow fadeIn">
+
+                    {% for job in jobs.all %}
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+
+                            <!-- Card Dark -->
+                                    <div class="card">
+                                        <!-- Card image -->
+                                        <div class="view overlay">
+                                        <img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+                                        </div>
+                                    
+                                        <!-- Card content -->
+                                        <div class="card-body elegant-color white-text rounded-bottom">
+                                    
+                                        <!-- Title -->
+                                        <h4 class="card-title">{{ job.title }}</h4>
+                                        <hr class="hr-light">
+                                        <!-- Text -->
+                                        <p class="card-text white-text mb-4">{{ job.summary }}</p>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                            <!-- Card Dark -->
+                        </div>
+                        <!--Grid column-->
+                    {% endfor %}
+                </div>
+                <!--Grid row-->
+
+
+                <!--Pagination-->
+               
+                <!--Pagination-->
+
+            </section>
+            <!--Section: Cards-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+      
+        <hr class="my-4">
+
+        <!-- Social icons -->
+        <div class="pb-4">
+            <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+                <i class="fab fa-facebook-f mr-3"></i>
+            </a>
+
+            <a href="https://twitter.com/MDBootstrap" target="_blank">
+                <i class="fab fa-twitter mr-3"></i>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+                <i class="fab fa-youtube mr-3"></i>
+            </a>
+
+            <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+                <i class="fab fa-google-plus-g mr-3"></i>
+            </a>
+
+            <a href="https://dribbble.com/mdbootstrap" target="_blank">
+                <i class="fab fa-dribbble mr-3"></i>
+            </a>
+
+            <a href="https://pinterest.com/mdbootstrap" target="_blank">
+                <i class="fab fa-pinterest mr-3"></i>
+            </a>
+
+            <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+                <i class="fab fa-github mr-3"></i>
+            </a>
+
+            <a href="http://codepen.io/mdbootstrap/" target="_blank">
+                <i class="fab fa-codepen mr-3"></i>
+            </a>
+        </div>
+        <!-- Social icons -->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+          Copyright 
+            <a href="" target="_blank"> Aman Yerpude </a>
+            © {% now "Y" %} 
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+   
+    <!-- Bootstrap core JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+</body>
+
+</html>
+
