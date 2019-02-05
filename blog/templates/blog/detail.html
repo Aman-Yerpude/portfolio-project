@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Aman Yerpude</title>
+    <!-- Font Awesome -->
+    <style>@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);</style>
+    <!-- Bootstrap core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Material Design Bootstrap -->
+    <style>@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);</style>
+    <!-- Your custom styles (optional) -->
+  
+</head>
+
+
+
+
+<body>
+
+    <!--Main Navigation-->
+    <header>
+
+       
+       <!--Navbar -->
+            <nav class="mb-4 navbar navbar-expand-lg navbar-dark unique-color-dark">
+                <a class="navbar-brand font-bold" href="#">Aman Yerpude</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                        <ul class="navbar-nav ml-auto">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="https://github.com/Aman-Yerpude"><i class="fa fa-github"></i> Github <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% static 'CV-AY.pdf' %}"><i class="fa fa-gear"></i> Resume</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'allblogs' %}"><i class="fa fa-gear"></i> Blog</a>
+                                </li>
+                        </ul>
+                </div>
+            </nav>
+       <!--/.Navbar -->
+        
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+        <!-- Page Content -->
+            <div class="container">
+
+                    <div class="row">
+                
+                    <!-- Post Content Column -->
+                    <div class="col-lg-12">
+                
+                        <!-- Title -->
+                        <h2 class="h1 text-left ">{{blog.title}}</h2>
+                
+                        <!-- Author -->
+                        <p class="lead">
+                        by
+                        <a href="#">Aman Yerpude</a>
+                        </p>
+                
+                        <hr>
+                
+                        <!-- Date/Time -->
+                        <p>Posted on {{blog.pub_date}}</p>
+                
+                        <hr>
+                
+                        <!-- Preview Image -->
+                        <img class="img-fluid rounded" src="{{blog.image.url}}" alt="">
+                
+                        <hr>
+                
+                        <!-- Post Content -->
+                        <p class="lead" style="text-align: justify;">{{blog.body}}</p>
+                
+                        <hr>
+                    </div>
+                    </div>
+            </div>    
+        <!-- Page Content -->
+    <!--Main layout-->
+
+   
+    
+
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+      
+        <hr class="my-4">
+
+        <!-- Social icons -->
+        <div class="pb-4">
+            <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+                <i class="fab fa-facebook-f mr-3"></i>
+            </a>
+
+            <a href="https://twitter.com/MDBootstrap" target="_blank">
+                <i class="fab fa-twitter mr-3"></i>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+                <i class="fab fa-youtube mr-3"></i>
+            </a>
+
+            <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+                <i class="fab fa-google-plus-g mr-3"></i>
+            </a>
+
+            <a href="https://dribbble.com/mdbootstrap" target="_blank">
+                <i class="fab fa-dribbble mr-3"></i>
+            </a>
+
+            <a href="https://pinterest.com/mdbootstrap" target="_blank">
+                <i class="fab fa-pinterest mr-3"></i>
+            </a>
+
+            <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+                <i class="fab fa-github mr-3"></i>
+            </a>
+
+            <a href="http://codepen.io/mdbootstrap/" target="_blank">
+                <i class="fab fa-codepen mr-3"></i>
+            </a>
+        </div>
+        <!-- Social icons -->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+          Copyright 
+            <a href="" target="_blank"> Aman Yerpude </a>
+            © {% now "Y" %} 
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+   
+    <!-- Bootstrap core JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+</body>
+
+</html>
+

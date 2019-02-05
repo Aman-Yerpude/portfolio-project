@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load staticfiles %}
     <meta charset="utf-8">
@@ -40,7 +41,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% static 'CV-AY.pdf' %}"><i class="fa fa-gear"></i> Resume</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{% url 'allblogs' %}"><i class="fa fa-gear"></i> Blog</a>
                         </li>
                     </ul>
@@ -54,82 +55,69 @@
 
     <!--Main layout-->
     <main class="mt-5 pt-5">
-        <div class="container">
+            <div class="container">
+    
+                <!--Section: Cards-->
+                <section class="pt-5">
+    
+                    <!-- Heading & Description -->
+                    <div class="wow fadeIn">
+                        <!--Section heading-->
+                        <h2 class="h1 text-center mb-5">Welcome to Aman's Blog</h2>
+                        <!--Section description-->
+                        <p class="text-center">MDB is world's most popular Material Design framework for building responsive, mobile-first websites
+                            and apps. </p>
+                        <p class="text-center mb-5 pb-5">Trusted by over
+                            <strong>400 000</strong> developers and designers. Easy to use & customize. 400+ material UI elements, templates
+                            & tutorials.</p> 
+                    </div>
+                    <!-- Heading & Description -->
+    
+                    <h2 class="h1 text-left ">Latest Post</h2>
+                    <hr class="mb-5">
+                    <!--Grid row-->
 
-            <!--Section: Jumbotron-->
-            <section class="card wow fadeIn" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
-
-                <!-- Content -->
-                <div class="card-body text-white text-center py-5 px-5 my-5">
-
-                    <h1 class="mb-4">
-                        <strong>Hi,I'am Aman.</strong>
-                    </h1>
-                   
-                    <p class="mb-4">
-                        <strong>Hey, my name is Aman Yerpude and I love to make Django websites.It's the thrill of handling the requests that the people want!</strong>
-                    </p>
-                    <a target="_blank" href="mailto:amanyerpude@outlook.com" class="btn btn-outline-white btn-lg">Email Me
-                        <i class="fas fa-graduation-cap ml-2"></i>
-                    </a>
-
-                </div>
-                <!-- Content -->
-            </section>
-            <!--Section: Jumbotron-->
-
-            <hr class="my-5">
-
-            <!--Section: Cards-->
-            <section class="text-center">
-
-                <!--Grid row-->
-                <div class="row mb-4 wow fadeIn">
-
-                    {% for job in jobs.all %}
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-6 mb-4">
-
-                            <!-- Card Dark -->
-                                    <div class="card">
-                                        <!-- Card image -->
-                                        <div class="view overlay">
-                                        <img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
+                {% for blog in blogs.all %}
+                    
+                        <div class="row wow fadeIn">
+                            <!--Grid column-->
+                                <div class="col-lg-5 col-xl-4 mb-4">
+                                        <!--Featured image-->
+                                        <div class="view overlay rounded z-depth-1">
+                                            <img src="{{blog.image.url}}" class="img-fluid" alt="">
+                                            <a href="" target="_blank">
+                                                <div class="mask rgba-white-slight"></div>
+                                            </a>
                                         </div>
-                                    
-                                        <!-- Card content -->
-                                        <div class="card-body elegant-color white-text rounded-bottom">
-                                    
-                                        <!-- Title -->
-                                        <h4 class="card-title">{{ job.title }}</h4>
-                                        <hr class="hr-light">
-                                        <!-- Text -->
-                                        <p class="card-text white-text mb-4">{{ job.summary }}</p>
-                                        
-                                        </div>
-                                    
                                     </div>
-                            <!-- Card Dark -->
+                            <!--Grid column-->
+        
+                            <!--Grid column-->
+                            <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+                                <h3 class="mb-3 font-weight-bold dark-grey-text" style="display: inline; vertical-align: top;">
+                                    <strong>{{ blog.title }}</strong>
+                                </h3>
+                                <p style="display: inline; float: right;"><strong >{{ blog.pub_date_pretty }}</strong></p>
+                                <p class="grey-text">{{blog.summary}}</p>
+                                <a href="{% url 'detail' blog.id %}"  class="btn btn-primary btn-md">Read More..
+                                    <i class="fas fa-play ml-2"></i>
+                                </a>
+                            </div>
+                            <!--Grid column-->
+        
                         </div>
-                        <!--Grid column-->
-                    {% endfor %}
-                </div>
-                <!--Grid row-->
+                        
+                    <!--Grid row-->
+    
+                    <hr class="mb-5">
+                {% endfor %}        
+                   
 
-
-                <!--Pagination-->
-               
-                <!--Pagination-->
-
-            </section>
-            <!--Section: Cards-->
-
-        </div>
+                </section>
+            </div>
     </main>
-    <!--Main layout-->
+    
+
 
     <!--Footer-->
     <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
